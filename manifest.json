@@ -1,7 +1,7 @@
 {
-	"name": "No Search Result Redirections",
-	"version": "0.0.2",
-	"description": "Removes redirections when clicking Google search result links",
+	"name": "No Redirections Plz",
+	"version": "0.0.3",
+	"description": "Removes redirections when clicking Google search result links and Facebook 'untrusted' links",
 	"icons": {
 		"48": "icons/48.png",
 		"128": "icons/128.png"
