@@ -18,7 +18,7 @@
 			if ( href ) {
 				event.stopImmediatePropagation();
 				event.preventDefault();
-				document.location = href;
+				window.open( href, "_blank" );
 			}
 		};
 	}

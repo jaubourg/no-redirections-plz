@@ -1,6 +1,7 @@
 {
 	"name": "No Redirections Plz",
-	"version": "0.0.6",
+	"short_name": "No Redir Plz",
+	"version": "0.1.0",
 	"description": "Removes redirections when clicking Google search result links and Facebook 'untrusted' links",
 	"icons": {
 		"48": "icons/48.png",
