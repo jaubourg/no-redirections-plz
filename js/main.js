@@ -1,8 +1,23 @@
-if ( /^[^\.]+\.(?:google|facebook)\.[^\.]+$/.test( document.location.host ) ) {
-	(function main() {
-		var anchors = document.querySelectorAll( "a[onmousedown]" ),
-			i, length;
-		for( i = 0, length = anchors.length; i < length; anchors[ i++ ].removeAttribute( "onmousedown" ) );
-		setTimeout( main, 1000 );
-	})();
-}
+( function() {
+
+	var getHref = ( {
+		google: function( element ) {
+			return element.getAttribute( "data-href" );
+		},
+		facebook: function( element ) {
+			return element.getAttribute( "href" );
+		}
+	} )[ ( /^[^\.]+\.(google|facebook)\.[^\.]+$/.exec( document.location.host ) || [] )[ 1 ] ];
+
+	if ( getHref ) {
+		document.body.onclick = function( event ) {
+			var href = event.target && getHref( event.target );
+			if ( href ) {
+				event.stopImmediatePropagation();
+				event.preventDefault();
+				document.location = href;
+			}
+		};
+	}
+
+} )();
