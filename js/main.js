@@ -6,7 +6,7 @@
 		},
 		facebook: function( element ) {
 			var href = element.getAttribute( "href" );
-			if ( !/^\/ajax\//.test( href ) ) {
+			if ( href !== "#" && !/^\/ajax\//.test( href ) ) {
 				return href;
 			}
 		}
