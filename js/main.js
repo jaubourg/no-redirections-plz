@@ -5,7 +5,10 @@
 			return element.getAttribute( "data-href" );
 		},
 		facebook: function( element ) {
-			return element.getAttribute( "href" );
+			var href = element.getAttribute( "href" );
+			if ( !/^\/ajax\//.test( href ) ) {
+				return href;
+			}
 		}
 	} )[ ( /^[^\.]+\.(google|facebook)\.[^\.]+$/.exec( document.location.host ) || [] )[ 1 ] ];
 
